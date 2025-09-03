@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Nossa Historia",
+    "slug": "nosso-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffe4e1"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.engelkejr.nossoappmain-p android--profile preview"
+    },
+    "android": {
+      "package": "com.engelkejr.nossoappmain",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffe4e1"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "owner": "engelkejr",
+    "extra": {
+      "eas": {
+        "projectId": "77bdf7e4-1031-43a0-aeab-76a99cb9d8f2"
+      }
+    }
+  }
+}

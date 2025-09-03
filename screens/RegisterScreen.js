@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const BACKEND_URL = 'http://177.192.23.102';
-const RegisterScreen = () => {
+const BACKEND_URL = 'https://nossahistoria.up.railway.app';
+  const RegisterScreen = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [mensagem, setMensagem] = useState('');
@@ -52,7 +52,9 @@ const RegisterScreen = () => {
           secureTextEntry
           required
         />
-        <Button title="Registrar" onPress={handleRegister} color="#ff69b4" />
+         <TouchableOpacity style={styles.button} onPress={handleRegister} activeOpacity={0.8}>
+           <Text style={styles.buttonText}>Registrar</Text>
+         </TouchableOpacity>
         <Text style={styles.mensagem}>{mensagem}</Text>
         <Text style={styles.linkText}>
           Já tem uma conta?{' '}
@@ -67,10 +69,40 @@ const RegisterScreen = () => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff0f5' },
-  form: { backgroundColor: 'white', padding: 30, borderRadius: 16, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.25, shadowRadius: 3.84, elevation: 5, width: '90%' },
-  h1: { fontSize: 32, fontFamily: 'Dancing Script', color: '#ff1493', marginBottom: 20, textAlign: 'center' },
+  form: {
+    backgroundColor: 'white',
+    padding: 30,
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: '90%',
+  },
+  h1: { fontSize: 32, fontWeight: 'bold', color: '#ff1493', marginBottom: 20, textAlign: 'center' },
   label: { color: '#ff1493', fontWeight: 'bold' },
-  input: { borderWidth: 1, borderColor: '#ccc', borderRadius: 10, padding: 12, marginTop: 5, marginBottom: 15 },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    padding: 12,
+    marginTop: 5,
+    marginBottom: 15,
+  },
+  button: {
+    backgroundColor: '#ff69b4',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
   mensagem: { color: 'red', textAlign: 'center', marginTop: 10 },
   linkText: { textAlign: 'center', marginTop: 15 },
   link: { color: '#ff1493', fontWeight: 'bold' },
